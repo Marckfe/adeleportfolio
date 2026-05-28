@@ -88,7 +88,7 @@ document.addEventListener('DOMContentLoaded', () => {
 async function loadPortfolioData() {
     try {
         // First check localStorage for any local edits from admin
-        const localData = localStorage.getItem('adele_portfolio_data_v9');
+        const localData = localStorage.getItem('adele_portfolio_data_v10');
         let data;
 
         if (localData) {
@@ -96,13 +96,13 @@ async function loadPortfolioData() {
             console.log("Dati caricati dalla cache locale.");
         } else {
             // Fetch from projects.json
-            const response = await fetch('projects.json?v=9');
+            const response = await fetch('projects.json?v=10');
             if (!response.ok) {
                 throw new Error(`HTTP error! status: ${response.status}`);
             }
             data = await response.json();
             // Save to local storage for future instant loads and admin edits
-            localStorage.setItem('adele_portfolio_data_v9', JSON.stringify(data));
+            localStorage.setItem('adele_portfolio_data_v10', JSON.stringify(data));
         }
 
         populateUI(data);
@@ -138,6 +138,12 @@ function populateUI(data) {
                 <div class="contact-icon">📍</div>
                 <div class="contact-text">${profile.contacts.location}</div>
             </div>
+            ${profile.contacts.linkedin ? `
+            <div class="contact-item">
+                <div class="contact-icon">🔗</div>
+                <div class="contact-text"><a href="${profile.contacts.linkedin}" target="_blank" style="color: var(--teal); text-decoration: none;">LinkedIn Profile</a></div>
+            </div>
+            ` : ''}
         `;
 
         // Populate Education
