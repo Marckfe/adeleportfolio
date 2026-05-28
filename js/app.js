@@ -159,10 +159,7 @@ function populateUI(data) {
         `).join('');
 
         // Populate Skills
-        const skillsList = document.getElementById('skillsList');
-        skillsList.innerHTML = profile.skills.map(skill => `
-            <div class="skill-tag">${skill}</div>
-        `).join('');
+        renderSkills(profile.skills);
     }
 
     // Populate Projects
@@ -228,3 +225,26 @@ function renderProjects(projects, filterCategory) {
         grid.appendChild(card);
     });
 }
+
+function renderSkills(skills) {
+    const container = document.getElementById("skillsList");
+    container.innerHTML = "";
+    const groups = { "Design & Grafica": ["Photoshop", "Illustrator", "InDesign", "Figma", "Canva"], "Video & Animazione": ["Premiere", "After Effects", "Cinema 4D", "Blender"], "Digital Art & Altro": ["Procreate", "Clip Studio Paint", "Office 365"] };
+    const mappedSkills = Object.values(groups).flat().map(s => s.toLowerCase());
+    const others = skills.filter(s => !mappedSkills.includes(s.toLowerCase()));
+    if (others.length > 0) groups["Altre Competenze"] = others;
+    container.className = "skills-cards-container";
+    let index = 0;
+    for (const [category, items] of Object.entries(groups)) {
+        const userHas = skills.filter(s => items.map(i=>i.toLowerCase()).includes(s.toLowerCase()));
+        if (userHas.length === 0) continue;
+        const card = document.createElement("div");
+        const revealClass = (index % 2 === 0) ? "reveal-left" : "reveal-right";
+        card.className = `skill-card ${revealClass}`;
+        card.innerHTML = `<h3 class="skill-category-title brush-font">${category}</h3><div class="skill-tags">${userHas.map(s => `<span class="skill-tag">${s}</span>`).join("")}</div>`;
+        container.appendChild(card);
+        if (typeof revealObserver !== "undefined") revealObserver.observe(card);
+        index++;
+    }
+}
+
