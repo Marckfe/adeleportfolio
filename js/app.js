@@ -327,3 +327,21 @@ const modalBackdrop = document.getElementById('modalBackdrop');
 if (modalClose) modalClose.addEventListener('click', closeProjectModal);
 if (modalBackdrop) modalBackdrop.addEventListener('click', closeProjectModal);
 
+// --- MOBILE MENU LOGIC ---
+const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+const nav = document.getElementById('nav');
+if (mobileMenuBtn && nav) {
+    mobileMenuBtn.addEventListener('click', () => {
+        nav.classList.toggle('active');
+        mobileMenuBtn.classList.toggle('active');
+    });
+    
+    // Chiudi il menu quando si clicca su un link
+    nav.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+            nav.classList.remove('active');
+            mobileMenuBtn.classList.remove('active');
+        });
+    });
+}
+
