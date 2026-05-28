@@ -582,6 +582,10 @@ body {
         display: none; /* Add mobile menu logic in JS if needed */
     }
     
+    .portfolio-grid {
+        grid-template-columns: 1fr;
+    }
+    
     .mobile-menu-btn {
         display: flex;
     }
