@@ -247,22 +247,50 @@ function renderProjects(projects, filterCategory) {
 function renderSkills(skills) {
     const container = document.getElementById("skillsList");
     container.innerHTML = "";
-    const groups = { "Design & Grafica": ["Photoshop", "Illustrator", "InDesign", "Figma", "Canva"], "Video & Animazione": ["Premiere", "After Effects", "Cinema 4D", "Blender"], "Digital Art & Altro": ["Procreate", "Clip Studio Paint", "Office 365"] };
-    const mappedSkills = Object.values(groups).flat().map(s => s.toLowerCase());
-    const others = skills.filter(s => !mappedSkills.includes(s.toLowerCase()));
-    if (others.length > 0) groups["Altre Competenze"] = others;
-    container.className = "skills-cards-container";
-    let index = 0;
-    for (const [category, items] of Object.entries(groups)) {
-        const userHas = skills.filter(s => items.map(i=>i.toLowerCase()).includes(s.toLowerCase()));
-        if (userHas.length === 0) continue;
-        const card = document.createElement("div");
-        const revealClass = (index % 2 === 0) ? "reveal-left" : "reveal-right";
-        card.className = `skill-card ${revealClass}`;
-        card.innerHTML = `<h3 class="skill-category-title brush-font">${category}</h3><div class="skill-tags">${userHas.map(s => `<span class="skill-tag">${s}</span>`).join("")}</div>`;
-        container.appendChild(card);
-        if (revealObserver) revealObserver.observe(card);
-        index++;
+    container.className = "skills-marquee-wrapper";
+    
+    // Pulizia delle skills (splittiamo la stringa "Adobe: ..." per avere tag separati)
+    let cleanSkills = [];
+    skills.forEach(s => {
+        if (s.toLowerCase().includes("adobe:")) {
+            const parts = s.split(":");
+            cleanSkills.push(parts[0].trim()); // "Adobe"
+            parts[1].split(",").forEach(p => cleanSkills.push(p.trim()));
+        } else {
+            cleanSkills.push(s);
+        }
+    });
+
+    // Dividiamo in due righe per farle scorrere in direzioni opposte
+    const half = Math.ceil(cleanSkills.length / 2);
+    const row1 = cleanSkills.slice(0, half);
+    const row2 = cleanSkills.slice(half);
+
+    // Helper per costruire il binario scorrevole
+    const buildTrack = (items, direction) => {
+        const trackWrapper = document.createElement("div");
+        trackWrapper.className = "marquee-track-wrapper reveal";
+        
+        const track = document.createElement("div");
+        track.className = `marquee-track scroll-${direction}`;
+        
+        // Duplichiamo 3 volte per un loop infinito senza scatti (33.33% in CSS)
+        const allItems = [...items, ...items, ...items];
+        
+        track.innerHTML = allItems.map(s => `<span class="skill-tag marquee-tag">${s}</span>`).join('');
+        trackWrapper.appendChild(track);
+        return trackWrapper;
+    };
+    
+    const track1 = buildTrack(row1, 'left');
+    const track2 = buildTrack(row2, 'right');
+    
+    container.appendChild(track1);
+    container.appendChild(track2);
+    
+    if (revealObserver) {
+        revealObserver.observe(track1);
+        revealObserver.observe(track2);
     }
 }
 
