@@ -697,3 +697,7 @@ body {
 .skill-card .skill-tag { background: #f8fcfb; color: #333; border: 1px solid rgba(27, 161, 152, 0.2); border-radius: 6px; padding: 8px 15px; font-weight: 500; font-size: 0.95rem; transition: background 0.2s ease, color 0.2s ease; }
 .skill-card .skill-tag:hover { background: var(--primary-color); color: white; }
 
+
+.profile-image { width: 350px; height: 350px; border-radius: 50%; object-fit: cover; border: 8px solid rgba(255, 255, 255, 0.8); box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15); animation: float 6s ease-in-out infinite; margin: 0 auto; display: block; }
+@media (max-width: 768px) { .profile-image { width: 250px; height: 250px; } }
+
