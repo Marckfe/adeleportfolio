@@ -121,6 +121,8 @@
                         <label for="message">Messaggio</label>
                         <textarea id="message" name="message" rows="5" required></textarea>
                     </div>
+                    <!-- Honeypot Anti-Spam (invisibile agli umani, i bot lo compilano e vengono bloccati) -->
+                    <input type="text" name="_gotcha" style="display:none" />
                     <button type="submit" class="btn btn-primary">Invia Messaggio</button>
                 </form>
             </div>
