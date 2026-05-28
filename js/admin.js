@@ -1,8 +1,19 @@
 let portfolioData = null;
 
-function checkLogin() {
+async function checkLogin() {
     const pass = document.getElementById('passcode').value;
-    if (pass === 'adele2026') {
+    
+    // Hash della password inserita (SHA-256) per confrontarla con il target
+    const encoder = new TextEncoder();
+    const data = encoder.encode(pass);
+    const hashBuffer = await crypto.subtle.digest('SHA-256', data);
+    const hashArray = Array.from(new Uint8Array(hashBuffer));
+    const hashHex = hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
+
+    // Hash segreto (la vera password non è nel codice)
+    const targetHash = 'f34943cdb461b7268d321cc2702ee9ad3682e6984057ceabea556afce5c28cd6';
+
+    if (hashHex === targetHash) {
         document.getElementById('loginScreen').style.display = 'none';
         document.getElementById('dashboardScreen').style.display = 'block';
         loadAdminData();
