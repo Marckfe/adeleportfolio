@@ -224,6 +224,10 @@ function renderProjects(projects, filterCategory) {
                 <p class="project-description">${project.description}</p>
             </div>
         `;
+        
+        // Nuova logica: Apri la modale al click
+        card.addEventListener('click', () => openProjectModal(project));
+        
         grid.appendChild(card);
         
         if (revealObserver) revealObserver.observe(card);
@@ -293,4 +297,33 @@ function renderSkills(skills) {
         revealObserver.observe(track2);
     }
 }
+
+// --- MODAL LOGIC (BEHANCE STYLE) ---
+function openProjectModal(project) {
+    const modal = document.getElementById('projectModal');
+    document.getElementById('modalCategory').textContent = project.category;
+    document.getElementById('modalTitle').textContent = project.title;
+    document.getElementById('modalDescription').textContent = project.description;
+    
+    const gallery = document.getElementById('modalGallery');
+    if (project.images && project.images.length > 0) {
+        gallery.innerHTML = project.images.map(img => `<img src="${img}" alt="${project.title}">`).join('');
+    } else {
+        gallery.innerHTML = '<p>Nessuna immagine disponibile.</p>';
+    }
+    
+    modal.classList.add('active');
+    document.body.style.overflow = 'hidden'; // Blocca lo scroll della pagina
+}
+
+function closeProjectModal() {
+    document.getElementById('projectModal').classList.remove('active');
+    document.body.style.overflow = '';
+}
+
+// Listener per chiusura modale (eseguiti perché lo script è a fine body)
+const modalClose = document.getElementById('modalClose');
+const modalBackdrop = document.getElementById('modalBackdrop');
+if (modalClose) modalClose.addEventListener('click', closeProjectModal);
+if (modalBackdrop) modalBackdrop.addEventListener('click', closeProjectModal);
 
