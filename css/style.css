@@ -579,11 +579,11 @@ body {
 
 @media (max-width: 992px) {
     .nav {
-        display: none; 
+        display: none !important; 
     }
     
     .nav.active {
-        display: flex;
+        display: flex !important;
         position: fixed;
         top: 0;
         left: 0;
