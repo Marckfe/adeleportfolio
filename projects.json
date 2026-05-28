@@ -231,7 +231,20 @@
         "assets/page_31_5.png",
         "assets/page_32_1.png",
         "assets/page_32_2.jpeg",
-        "assets/page_32_3.jpeg"
+        "assets/page_32_3.jpeg",
+        "assets/page_33_1.jpeg",
+        "assets/page_33_2.jpeg",
+        "assets/page_33_3.jpeg",
+        "assets/page_33_4.jpeg",
+        "assets/page_33_5.jpeg",
+        "assets/page_33_6.jpeg",
+        "assets/page_33_7.jpeg",
+        "assets/page_33_8.jpeg",
+        "assets/page_33_15.jpeg",
+        "assets/page_33_16.jpeg",
+        "assets/page_33_17.jpeg",
+        "assets/page_33_18.jpeg",
+        "assets/page_33_19.jpeg"
       ]
     },
     {
@@ -305,27 +318,6 @@
         "assets/page_29_35.jpeg",
         "assets/page_29_36.png",
         "assets/page_29_49.png"
-      ]
-    },
-    {
-      "id": "23",
-      "title": "Progetto Animazione (Page 33)",
-      "category": "Animazione 2D/3D",
-      "description": "Descrizione da inserire.",
-      "images": [
-        "assets/page_33_1.jpeg",
-        "assets/page_33_2.jpeg",
-        "assets/page_33_3.jpeg",
-        "assets/page_33_4.jpeg",
-        "assets/page_33_5.jpeg",
-        "assets/page_33_6.jpeg",
-        "assets/page_33_7.jpeg",
-        "assets/page_33_8.jpeg",
-        "assets/page_33_15.jpeg",
-        "assets/page_33_16.jpeg",
-        "assets/page_33_17.jpeg",
-        "assets/page_33_18.jpeg",
-        "assets/page_33_19.jpeg"
       ]
     }
   ]
