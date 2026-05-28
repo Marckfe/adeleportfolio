@@ -465,9 +465,9 @@ body {
 
 /* Contact Section */
 .contact-container {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 60px;
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
     background: white;
     padding: 50px;
     border-radius: var(--radius);
