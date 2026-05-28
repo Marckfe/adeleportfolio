@@ -88,7 +88,7 @@ document.addEventListener('DOMContentLoaded', () => {
 async function loadPortfolioData() {
     try {
         // First check localStorage for any local edits from admin
-        const localData = localStorage.getItem('adele_portfolio_data_v11');
+        const localData = localStorage.getItem('adele_portfolio_data_v12');
         let data;
 
         if (localData) {
@@ -96,13 +96,13 @@ async function loadPortfolioData() {
             console.log("Dati caricati dalla cache locale.");
         } else {
             // Fetch from projects.json
-            const response = await fetch('projects.json?v=11');
+            const response = await fetch('projects.json?v=12');
             if (!response.ok) {
                 throw new Error(`HTTP error! status: ${response.status}`);
             }
             data = await response.json();
             // Save to local storage for future instant loads and admin edits
-            localStorage.setItem('adele_portfolio_data_v11', JSON.stringify(data));
+            localStorage.setItem('adele_portfolio_data_v12', JSON.stringify(data));
         }
 
         populateUI(data);
@@ -128,11 +128,11 @@ function populateUI(data) {
         contactDetails.innerHTML = `
             <div class="contact-item">
                 <div class="contact-icon">@</div>
-                <div class="contact-text">${profile.contacts.email}</div>
+                <div class="contact-text"><a href="mailto:${profile.contacts.email}" style="color: inherit; text-decoration: none;">${profile.contacts.email}</a></div>
             </div>
             <div class="contact-item">
                 <div class="contact-icon">📞</div>
-                <div class="contact-text">${profile.contacts.phone}</div>
+                <div class="contact-text"><a href="tel:${profile.contacts.phone.replace(/\s+/g, '')}" style="color: inherit; text-decoration: none;">${profile.contacts.phone}</a></div>
             </div>
             <div class="contact-item">
                 <div class="contact-icon">📍</div>
