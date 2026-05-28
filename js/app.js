@@ -88,7 +88,7 @@ document.addEventListener('DOMContentLoaded', () => {
 async function loadPortfolioData() {
     try {
         // First check localStorage for any local edits from admin
-        const localData = localStorage.getItem('adele_portfolio_data_v18');
+        const localData = localStorage.getItem('adele_portfolio_data_v19');
         let data;
 
         if (localData) {
@@ -96,13 +96,13 @@ async function loadPortfolioData() {
             console.log("Dati caricati dalla cache locale.");
         } else {
             // Fetch from projects.json
-            const response = await fetch('projects.json?v=18');
+            const response = await fetch('projects.json?v=19');
             if (!response.ok) {
                 throw new Error(`HTTP error! status: ${response.status}`);
             }
             data = await response.json();
             // Save to local storage for future instant loads and admin edits
-            localStorage.setItem('adele_portfolio_data_v18', JSON.stringify(data));
+            localStorage.setItem('adele_portfolio_data_v19', JSON.stringify(data));
         }
 
         populateUI(data);
