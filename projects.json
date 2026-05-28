@@ -235,6 +235,166 @@
         "assets/page_36_1.png",
         "assets/page_36_2.png"
       ]
+    },
+    {
+      "id": "16",
+      "title": "Progetto Grafico (Page 13)",
+      "category": "Graphic Design",
+      "description": "Descrizione da inserire.",
+      "images": [
+        "assets/page_13_1.jpeg",
+        "assets/page_13_2.jpeg"
+      ]
+    },
+    {
+      "id": "17",
+      "title": "Progetto Grafico (Page 16)",
+      "category": "Graphic Design",
+      "description": "Descrizione da inserire.",
+      "images": [
+        "assets/page_16_2.jpeg",
+        "assets/page_16_3.jpeg",
+        "assets/page_16_4.jpeg"
+      ]
+    },
+    {
+      "id": "18",
+      "title": "Progetto Grafico (Page 17)",
+      "category": "Graphic Design",
+      "description": "Descrizione da inserire.",
+      "images": [
+        "assets/page_17_1.jpeg",
+        "assets/page_17_2.jpeg",
+        "assets/page_17_3.jpeg",
+        "assets/page_17_4.jpeg",
+        "assets/page_17_5.jpeg",
+        "assets/page_17_6.jpeg",
+        "assets/page_17_7.png",
+        "assets/page_17_8.jpeg"
+      ]
+    },
+    {
+      "id": "19",
+      "title": "Progetto UI (Page 19 Extra)",
+      "category": "UI Design",
+      "description": "Descrizione da inserire.",
+      "images": [
+        "assets/page_19_1.png",
+        "assets/page_19_2.png",
+        "assets/page_19_31.png",
+        "assets/page_19_32.png",
+        "assets/page_19_33.png",
+        "assets/page_19_37.png",
+        "assets/page_19_84.png",
+        "assets/page_19_85.png",
+        "assets/page_19_86.png",
+        "assets/page_19_87.png",
+        "assets/page_19_88.png",
+        "assets/page_19_89.png"
+      ]
+    },
+    {
+      "id": "20",
+      "title": "Progetto UI (Page 26 Extra)",
+      "category": "UI Design",
+      "description": "Descrizione da inserire.",
+      "images": [
+        "assets/page_26_3.jpeg",
+        "assets/page_26_4.jpeg",
+        "assets/page_26_5.png",
+        "assets/page_26_6.jpeg"
+      ]
+    },
+    {
+      "id": "21",
+      "title": "Progetto UI (Page 29 Extra)",
+      "category": "UI Design",
+      "description": "Descrizione da inserire.",
+      "images": [
+        "assets/page_29_17.png",
+        "assets/page_29_34.jpeg",
+        "assets/page_29_35.jpeg",
+        "assets/page_29_36.png",
+        "assets/page_29_49.png"
+      ]
+    },
+    {
+      "id": "22",
+      "title": "Progetto UI (Page 31/32 Extra)",
+      "category": "UI Design",
+      "description": "Descrizione da inserire.",
+      "images": [
+        "assets/page_32_2.jpeg",
+        "assets/page_32_3.jpeg"
+      ]
+    },
+    {
+      "id": "23",
+      "title": "Progetto Animazione (Page 33)",
+      "category": "Animazione 2D/3D",
+      "description": "Descrizione da inserire.",
+      "images": [
+        "assets/page_33_1.jpeg",
+        "assets/page_33_2.jpeg",
+        "assets/page_33_3.jpeg",
+        "assets/page_33_4.jpeg",
+        "assets/page_33_5.jpeg",
+        "assets/page_33_6.jpeg",
+        "assets/page_33_7.jpeg",
+        "assets/page_33_8.jpeg",
+        "assets/page_33_15.jpeg",
+        "assets/page_33_16.jpeg",
+        "assets/page_33_17.jpeg",
+        "assets/page_33_18.jpeg",
+        "assets/page_33_19.jpeg"
+      ]
+    },
+    {
+      "id": "24",
+      "title": "Progetto Animazione (Page 36 Extra)",
+      "category": "Animazione 2D/3D",
+      "description": "Descrizione da inserire.",
+      "images": [
+        "assets/page_36_3.png",
+        "assets/page_36_4.png",
+        "assets/page_36_5.png",
+        "assets/page_36_6.png",
+        "assets/page_36_7.png",
+        "assets/page_36_8.png",
+        "assets/page_36_9.png"
+      ]
+    },
+    {
+      "id": "25",
+      "title": "Progetto Animazione (Page 37)",
+      "category": "Animazione 2D/3D",
+      "description": "Descrizione da inserire.",
+      "images": [
+        "assets/page_37_1.jpeg",
+        "assets/page_37_2.jpeg"
+      ]
+    },
+    {
+      "id": "26",
+      "title": "Progetto Animazione (Page 38)",
+      "category": "Animazione 2D/3D",
+      "description": "Descrizione da inserire.",
+      "images": [
+        "assets/page_38_1.jpeg",
+        "assets/page_38_2.jpeg",
+        "assets/page_38_3.jpeg"
+      ]
+    },
+    {
+      "id": "27",
+      "title": "Progetto Animazione (Page 39/40)",
+      "category": "Animazione 2D/3D",
+      "description": "Descrizione da inserire.",
+      "images": [
+        "assets/page_39_3.jpeg",
+        "assets/page_40_1.jpeg",
+        "assets/page_40_2.jpeg"
+      ]
     }
   ]
 }
