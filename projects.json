@@ -309,15 +309,14 @@
     },
     {
       "id": "21",
-      "title": "Progetto UI (Page 29 Extra)",
+      "title": "RESTYLING SITO WEB (2017)",
       "category": "UI Design",
-      "description": "Descrizione da inserire.",
+      "description": "Restyling di un sito prodotto nell’ambito del corso di web design dell’Accademia di Belle Arti di Napoli.",
       "images": [
-        "assets/page_29_17.png",
-        "assets/page_29_34.jpeg",
-        "assets/page_29_35.jpeg",
-        "assets/page_29_36.png",
-        "assets/page_29_49.png"
+        "assets/restyling_1.png",
+        "assets/restyling_2.png",
+        "assets/restyling_3.png",
+        "assets/restyling_4.png"
       ]
     }
   ]
