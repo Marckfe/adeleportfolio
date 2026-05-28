@@ -191,7 +191,14 @@
         "assets/page_25_2.jpeg",
         "assets/page_25_4.jpeg",
         "assets/page_25_5.jpeg",
-        "assets/page_26_2.jpeg"
+        "assets/page_26_2.jpeg",
+        "assets/page_26_3.jpeg",
+        "assets/page_26_4.jpeg",
+        "assets/page_26_5.png",
+        "assets/page_26_6.jpeg",
+        "assets/page_38_1.jpeg",
+        "assets/page_38_2.jpeg",
+        "assets/page_38_3.jpeg"
       ]
     },
     {
@@ -274,18 +281,6 @@
       ]
     },
     {
-      "id": "20",
-      "title": "Progetto UI (Page 26 Extra)",
-      "category": "UI Design",
-      "description": "Descrizione da inserire.",
-      "images": [
-        "assets/page_26_3.jpeg",
-        "assets/page_26_4.jpeg",
-        "assets/page_26_5.png",
-        "assets/page_26_6.jpeg"
-      ]
-    },
-    {
       "id": "21",
       "title": "Progetto UI (Page 29 Extra)",
       "category": "UI Design",
@@ -352,17 +347,6 @@
       "images": [
         "assets/page_37_1.jpeg",
         "assets/page_37_2.jpeg"
-      ]
-    },
-    {
-      "id": "26",
-      "title": "Progetto Animazione (Page 38)",
-      "category": "Animazione 2D/3D",
-      "description": "Descrizione da inserire.",
-      "images": [
-        "assets/page_38_1.jpeg",
-        "assets/page_38_2.jpeg",
-        "assets/page_38_3.jpeg"
       ]
     },
     {
