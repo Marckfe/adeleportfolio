@@ -1,3 +1,5 @@
+let revealObserver;
+
 document.addEventListener('DOMContentLoaded', () => {
     // Current year in footer
     document.getElementById('currentYear').textContent = new Date().getFullYear();
@@ -41,10 +43,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 });
                 
                 if (response.ok) {
-                    alert('Messaggio inviato con successo! Ti ricontatterò presto.');
+                    alert("Messaggio inviato con successo! Ti ricontatterò presto.");
                     contactForm.reset();
                 } else {
-                    alert('Oops! C\\'è stato un problema con l\\'invio. Riprova.');
+                    alert("Oops! C'è stato un problema con l'invio. Riprova.");
                 }
             } catch (err) {
                 alert('Errore di connessione. Riprova più tardi.');
@@ -70,7 +72,7 @@ document.addEventListener('DOMContentLoaded', () => {
         rootMargin: "0px"
     };
 
-    const revealObserver = new IntersectionObserver(function(entries, observer) {
+    revealObserver = new IntersectionObserver(function(entries, observer) {
         entries.forEach(entry => {
             if (!entry.isIntersecting) return;
             entry.target.classList.add('active');
@@ -223,6 +225,22 @@ function renderProjects(projects, filterCategory) {
             </div>
         `;
         grid.appendChild(card);
+        
+        if (revealObserver) revealObserver.observe(card);
+    });
+    
+    // Avvia i caroselli se presenti
+    const carousels = document.querySelectorAll('.project-carousel');
+    carousels.forEach(c => {
+        const imgs = c.querySelectorAll('.carousel-img');
+        if (imgs.length > 1) {
+            let idx = 0;
+            setInterval(() => {
+                imgs[idx].classList.remove('active');
+                idx = (idx + 1) % imgs.length;
+                imgs[idx].classList.add('active');
+            }, 3000 + Math.random() * 1500); 
+        }
     });
 }
 
@@ -243,7 +261,7 @@ function renderSkills(skills) {
         card.className = `skill-card ${revealClass}`;
         card.innerHTML = `<h3 class="skill-category-title brush-font">${category}</h3><div class="skill-tags">${userHas.map(s => `<span class="skill-tag">${s}</span>`).join("")}</div>`;
         container.appendChild(card);
-        if (typeof revealObserver !== "undefined") revealObserver.observe(card);
+        if (revealObserver) revealObserver.observe(card);
         index++;
     }
 }
