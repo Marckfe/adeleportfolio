@@ -240,7 +240,14 @@
         "assets/page_35_1.jpeg",
         "assets/page_35_2.jpeg",
         "assets/page_36_1.png",
-        "assets/page_36_2.png"
+        "assets/page_36_2.png",
+        "assets/page_36_3.png",
+        "assets/page_36_4.png",
+        "assets/page_36_5.png",
+        "assets/page_36_6.png",
+        "assets/page_36_7.png",
+        "assets/page_36_8.png",
+        "assets/page_36_9.png"
       ]
     },
     {
@@ -322,21 +329,6 @@
         "assets/page_33_17.jpeg",
         "assets/page_33_18.jpeg",
         "assets/page_33_19.jpeg"
-      ]
-    },
-    {
-      "id": "24",
-      "title": "Progetto Animazione (Page 36 Extra)",
-      "category": "Animazione 2D/3D",
-      "description": "Descrizione da inserire.",
-      "images": [
-        "assets/page_36_3.png",
-        "assets/page_36_4.png",
-        "assets/page_36_5.png",
-        "assets/page_36_6.png",
-        "assets/page_36_7.png",
-        "assets/page_36_8.png",
-        "assets/page_36_9.png"
       ]
     },
     {
