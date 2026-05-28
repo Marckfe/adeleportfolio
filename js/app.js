@@ -88,7 +88,7 @@ document.addEventListener('DOMContentLoaded', () => {
 async function loadPortfolioData() {
     try {
         // First check localStorage for any local edits from admin
-        const localData = localStorage.getItem('adele_portfolio_data_v13');
+        const localData = localStorage.getItem('adele_portfolio_data_v14');
         let data;
 
         if (localData) {
@@ -96,13 +96,13 @@ async function loadPortfolioData() {
             console.log("Dati caricati dalla cache locale.");
         } else {
             // Fetch from projects.json
-            const response = await fetch('projects.json?v=13');
+            const response = await fetch('projects.json?v=14');
             if (!response.ok) {
                 throw new Error(`HTTP error! status: ${response.status}`);
             }
             data = await response.json();
             // Save to local storage for future instant loads and admin edits
-            localStorage.setItem('adele_portfolio_data_v13', JSON.stringify(data));
+            localStorage.setItem('adele_portfolio_data_v14', JSON.stringify(data));
         }
 
         populateUI(data);
@@ -149,7 +149,7 @@ function populateUI(data) {
                 <div class="contact-icon" style="display: flex; align-items: center; justify-content: center;">
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
                 </div>
-                <div class="contact-text"><a href="${profile.contacts.linkedin}" target="_blank" style="color: var(--teal); text-decoration: none;">LinkedIn Profile</a></div>
+                <div class="contact-text"><a href="${profile.contacts.linkedin}" onclick="openLinkedIn(event, '${profile.contacts.linkedin}')" style="color: var(--teal); text-decoration: none;">LinkedIn Profile</a></div>
             </div>
             ` : ''}
         `;
@@ -359,3 +359,41 @@ if (mobileMenuBtn && nav) {
     });
 }
 
+// --- FUNZIONALITA' DEEP LINKING PER LINKEDIN ---
+window.openLinkedIn = function(e, url) {
+    e.preventDefault();
+    
+    // Estrai lo username dall'URL di LinkedIn
+    const match = url.match(/linkedin\.com\/in\/([^\/]+)/i);
+    const username = match ? match[1] : null;
+    
+    if (!username) {
+        window.open(url, '_blank');
+        return;
+    }
+
+    const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+    const isAndroid = /Android/.test(navigator.userAgent);
+
+    if (isAndroid) {
+        // Su Android, usiamo l'Intent Scheme nativo. Se l'app non è installata, il browser
+        // lo gestisce automaticamente aprendo la versione web (o il Play Store a seconda del browser).
+        window.location.href = `intent://in/${username}#Intent;package=com.linkedin.android;scheme=https;end`;
+    } else if (isIOS) {
+        // Su iOS proviamo ad aprire il protocollo personalizzato
+        const appUrl = `linkedin://profile/${username}`;
+        
+        // Timeout di fallback: se l'app non si apre, la pagina web rimane attiva e scatta il fallback
+        const now = Date.now();
+        setTimeout(() => {
+            if (Date.now() - now < 1000) {
+                window.open(url, '_blank');
+            }
+        }, 500);
+        
+        window.location.href = appUrl;
+    } else {
+        // Desktop
+        window.open(url, '_blank');
+    }
+};
