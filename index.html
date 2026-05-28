@@ -5,18 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Adele Taccone - Portfolio</title>
     
-    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <!-- Caveat per i titoli "Brush Script" style e Montserrat per il corpo -->
     <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
     
-    <!-- Header / Navigation -->
-    <header class="header">
+    <header class="header" id="mainHeader">
         <div class="container header-container">
             <div class="logo">
                 <span class="logo-name">Adele Taccone</span>
@@ -35,10 +31,9 @@
         </div>
     </header>
 
-    <!-- Hero Section -->
     <section class="hero pattern-bg" id="about">
         <div class="container hero-content">
-            <div class="hero-text" id="bioContainer">
+            <div class="hero-text reveal-left" id="bioContainer">
                 <h1 class="hero-title" id="profileName">Adele Taccone</h1>
                 <h2 class="hero-subtitle" id="profileTitle">Designer della comunicazione</h2>
                 <p class="hero-bio" id="profileBio">Caricamento bio...</p>
@@ -47,8 +42,7 @@
                     <a href="#contact" class="btn btn-outline">Contattami</a>
                 </div>
             </div>
-            <div class="hero-image">
-                <!-- Vettoriale astratto o placeholder della foto di Adele -->
+            <div class="hero-image reveal-right">
                 <div class="profile-illustration">
                     <div class="illustration-circle"></div>
                     <div class="illustration-avatar">A</div>
@@ -57,17 +51,16 @@
         </div>
     </section>
 
-    <!-- Esperienza ed Educazione -->
-    <section class="resume section-padding" id="resume">
+    <section class="resume section-padding reveal" id="resume">
         <div class="container">
             <div class="resume-grid">
-                <div class="resume-col">
+                <div class="resume-col reveal-left">
                     <h3 class="section-title brush-font">Educazione</h3>
                     <ul class="timeline" id="educationList">
                         <!-- Generato dinamicamente -->
                     </ul>
                 </div>
-                <div class="resume-col">
+                <div class="resume-col reveal-right">
                     <h3 class="section-title brush-font">Esperienze lavorative</h3>
                     <ul class="timeline" id="experienceList">
                         <!-- Generato dinamicamente -->
@@ -77,8 +70,7 @@
         </div>
     </section>
 
-    <!-- Portfolio Section -->
-    <section class="portfolio pattern-bg section-padding" id="portfolio">
+    <section class="portfolio pattern-bg section-padding reveal" id="portfolio">
         <div class="container">
             <div class="portfolio-header">
                 <h2 class="section-title brush-font">Portfolio</h2>
@@ -92,33 +84,30 @@
             </div>
 
             <div class="portfolio-grid" id="portfolioGrid">
-                <!-- I progetti vengono inseriti qui dal JS -->
                 <div class="loader">Caricamento progetti...</div>
             </div>
         </div>
     </section>
 
-    <!-- Skills Section -->
-    <section class="skills section-padding" id="skills">
+    <section class="skills section-padding reveal" id="skills">
         <div class="container">
-            <h2 class="section-title brush-font">Competenze</h2>
+            <h2 class="section-title brush-font" style="text-align: center; width: 100%;">Competenze</h2>
             <div class="skills-grid" id="skillsList">
                 <!-- Skills generate dal JS -->
             </div>
         </div>
     </section>
 
-    <!-- Contact Section -->
-    <section class="contact pattern-bg section-padding" id="contact">
+    <section class="contact pattern-bg section-padding reveal" id="contact">
         <div class="container contact-container">
-            <div class="contact-info">
+            <div class="contact-info reveal-left">
                 <h2 class="section-title brush-font">Info & Contatti</h2>
                 <p>Hai un progetto in mente o vuoi semplicemente fare due chiacchiere? Scrivimi!</p>
                 <div class="contact-details" id="contactDetails">
                     <!-- Contatti generati dal JS -->
                 </div>
             </div>
-            <div class="contact-form-container">
+            <div class="contact-form-container reveal-right">
                 <form class="contact-form" id="contactForm">
                     <div class="form-group">
                         <label for="name">Nome</label>
@@ -138,7 +127,6 @@
         </div>
     </section>
 
-    <!-- Footer -->
     <footer class="footer">
         <div class="container">
             <p>&copy; <span id="currentYear"></span> Adele Taccone. Portfolio creato con cura.</p>
@@ -146,7 +134,6 @@
         </div>
     </footer>
 
-    <!-- Scripts -->
     <script src="js/app.js"></script>
 </body>
 </html>
