@@ -198,7 +198,10 @@
         "assets/page_26_6.jpeg",
         "assets/page_38_1.jpeg",
         "assets/page_38_2.jpeg",
-        "assets/page_38_3.jpeg"
+        "assets/page_38_3.jpeg",
+        "assets/page_39_3.jpeg",
+        "assets/page_40_1.jpeg",
+        "assets/page_40_2.jpeg"
       ]
     },
     {
@@ -323,17 +326,6 @@
         "assets/page_33_17.jpeg",
         "assets/page_33_18.jpeg",
         "assets/page_33_19.jpeg"
-      ]
-    },
-    {
-      "id": "27",
-      "title": "Progetto Animazione (Page 39/40)",
-      "category": "Animazione 2D/3D",
-      "description": "Descrizione da inserire.",
-      "images": [
-        "assets/page_39_3.jpeg",
-        "assets/page_40_1.jpeg",
-        "assets/page_40_2.jpeg"
       ]
     }
   ]
