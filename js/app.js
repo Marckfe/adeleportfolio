@@ -88,7 +88,7 @@ document.addEventListener('DOMContentLoaded', () => {
 async function loadPortfolioData() {
     try {
         // First check localStorage for any local edits from admin
-        const localData = localStorage.getItem('adele_portfolio_data');
+        const localData = localStorage.getItem('adele_portfolio_data_v2');
         let data;
 
         if (localData) {
@@ -102,7 +102,7 @@ async function loadPortfolioData() {
             }
             data = await response.json();
             // Save to local storage for future instant loads and admin edits
-            localStorage.setItem('adele_portfolio_data', JSON.stringify(data));
+            localStorage.setItem('adele_portfolio_data_v2', JSON.stringify(data));
         }
 
         populateUI(data);

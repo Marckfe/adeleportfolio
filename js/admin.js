@@ -23,20 +23,17 @@ async function checkLogin() {
 }
 
 async function loadAdminData() {
-    // Try to load from localStorage first
-    const local = localStorage.getItem('adele_portfolio_data');
-    if (local) {
-        portfolioData = JSON.parse(local);
+    const localData = localStorage.getItem('adele_portfolio_data_v2');
+    if (localData) {
+        portfolioData = JSON.parse(localData);
         renderAdminList();
     } else {
-        // Fetch from file if no local edits exist
-        try {
-            const res = await fetch('projects.json');
-            portfolioData = await res.json();
-            renderAdminList();
-        } catch (e) {
-            alert("Errore caricamento database. Assicurati di essere su un server locale.");
-        }
+        fetch('projects.json')
+            .then(res => res.json())
+            .then(data => {
+                portfolioData = data;
+                renderAdminList();
+            });
     }
 }
 
@@ -166,7 +163,7 @@ function deleteProject(id) {
 }
 
 function saveDataLocally() {
-    localStorage.setItem('adele_portfolio_data', JSON.stringify(portfolioData));
+    localStorage.setItem('adele_portfolio_data_v2', JSON.stringify(portfolioData));
 }
 
 // Export JSON
