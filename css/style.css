@@ -591,15 +591,17 @@ body {
         height: 100vh;
         background: rgba(255, 255, 255, 0.98);
         flex-direction: column;
-        justify-content: center;
+        justify-content: flex-start;
+        padding-top: 150px;
         align-items: center;
         z-index: 999;
     }
     
     .nav.active ul {
         flex-direction: column;
-        gap: 40px;
+        gap: 35px;
         text-align: center;
+        padding: 0;
     }
     
     .nav.active a {
