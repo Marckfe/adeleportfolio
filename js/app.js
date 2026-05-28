@@ -25,13 +25,30 @@ document.addEventListener('DOMContentLoaded', () => {
     // Load data from JSON (or localStorage if edited)
     loadPortfolioData();
 
-    // Handle contact form submission
+    // Handle contact form submission for Formspree
     const contactForm = document.getElementById('contactForm');
     if (contactForm) {
-        contactForm.addEventListener('submit', (e) => {
+        contactForm.addEventListener('submit', async (e) => {
             e.preventDefault();
-            alert('Messaggio inviato con successo! Ti ricontatterò presto.');
-            contactForm.reset();
+            const formData = new FormData(contactForm);
+            
+            // Invio AJAX a Formspree (il form ha l'action url corretto in HTML)
+            try {
+                const response = await fetch(contactForm.action, {
+                    method: 'POST',
+                    body: formData,
+                    headers: { 'Accept': 'application/json' }
+                });
+                
+                if (response.ok) {
+                    alert('Messaggio inviato con successo! Ti ricontatterò presto.');
+                    contactForm.reset();
+                } else {
+                    alert('Oops! C\\'è stato un problema con l\\'invio. Riprova.');
+                }
+            } catch (err) {
+                alert('Errore di connessione. Riprova più tardi.');
+            }
         });
     }
 
@@ -179,15 +196,25 @@ function renderProjects(projects, filterCategory) {
         return;
     }
 
-    filtered.forEach(project => {
-        const hasImage = project.image && project.image !== "assets/placeholder.jpg";
-        
-        const imageHTML = hasImage 
-            ? `<img src="${project.image}" alt="${project.title}" class="project-image">`
-            : `<div class="project-placeholder">${project.title.substring(0,2).toUpperCase()}</div>`;
-
+    filtered.forEach((project, index) => {
         const card = document.createElement('div');
-        card.className = 'project-card';
+        
+        // Assegna reveal-left o reveal-right in base all'indice (pari o dispari) per l'effetto zig-zag su mobile
+        const revealClass = (index % 2 === 0) ? 'reveal-left' : 'reveal-right';
+        card.className = `project-card ${revealClass}`;
+        
+        const hasImages = project.images && project.images.length > 0;
+        let imageHTML = `<div class="project-placeholder">${project.title.substring(0,2).toUpperCase()}</div>`;
+        
+        if (hasImages) {
+            if (project.images.length === 1) {
+                imageHTML = `<img src="${project.images[0]}" alt="${project.title}" class="project-image">`;
+            } else {
+                let imgs = project.images.map((img, i) => `<img src="${img}" class="carousel-img ${i===0?'active':''}" alt="Slide ${i}">`).join('');
+                imageHTML = `<div class="project-carousel">${imgs}</div>`;
+            }
+        }
+        
         card.innerHTML = `
             <div class="project-image-wrapper">
                 ${imageHTML}

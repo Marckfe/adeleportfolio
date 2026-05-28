@@ -71,6 +71,8 @@ function openModal() {
     document.getElementById('projectForm').reset();
     document.getElementById('projId').value = '';
     document.getElementById('modalTitle').textContent = 'Aggiungi Progetto';
+    document.getElementById('imageListContainer').innerHTML = '';
+    addImageInput();
     document.getElementById('projectModal').style.display = 'flex';
 }
 
@@ -86,30 +88,67 @@ function editProject(id) {
     document.getElementById('projTitle').value = proj.title;
     document.getElementById('projCategory').value = proj.category;
     document.getElementById('projDesc').value = proj.description;
-    document.getElementById('projImage').value = proj.image;
+    
+    const container = document.getElementById('imageListContainer');
+    container.innerHTML = '';
+    if (proj.images && proj.images.length > 0) {
+        proj.images.forEach(img => addImageInput(img));
+    } else {
+        addImageInput();
+    }
     
     document.getElementById('modalTitle').textContent = 'Modifica Progetto';
     document.getElementById('projectModal').style.display = 'flex';
+}
+
+function addImageInput(val = '') {
+    const container = document.getElementById('imageListContainer');
+    const div = document.createElement('div');
+    div.style.display = 'flex';
+    div.style.gap = '5px';
+    div.innerHTML = `
+        <input type="text" class="proj-img-input" placeholder="es: assets/foto.jpg" value="${val}" style="flex:1;">
+        <button type="button" class="btn btn-outline" style="padding:0 10px;" onclick="moveImageUp(this)">↑</button>
+        <button type="button" class="btn btn-outline" style="padding:0 10px;" onclick="moveImageDown(this)">↓</button>
+        <button type="button" class="btn btn-outline" style="padding:0 10px; color:red; border-color:red;" onclick="this.parentElement.remove()">X</button>
+    `;
+    container.appendChild(div);
+}
+
+function moveImageUp(btn) {
+    const item = btn.parentElement;
+    if (item.previousElementSibling) {
+        item.parentElement.insertBefore(item, item.previousElementSibling);
+    }
+}
+
+function moveImageDown(btn) {
+    const item = btn.parentElement;
+    if (item.nextElementSibling) {
+        item.parentElement.insertBefore(item.nextElementSibling, item);
+    }
 }
 
 document.getElementById('projectForm').addEventListener('submit', (e) => {
     e.preventDefault();
     
     const id = document.getElementById('projId').value;
+    
+    const imgInputs = document.querySelectorAll('.proj-img-input');
+    const images = Array.from(imgInputs).map(inp => inp.value).filter(val => val.trim() !== '');
+
     const newProj = {
         id: id ? id : Date.now().toString(),
         title: document.getElementById('projTitle').value,
         category: document.getElementById('projCategory').value,
         description: document.getElementById('projDesc').value,
-        image: document.getElementById('projImage').value
+        images: images
     };
     
     if (id) {
-        // Edit
         const idx = portfolioData.projects.findIndex(p => p.id === id);
         portfolioData.projects[idx] = newProj;
     } else {
-        // Add
         portfolioData.projects.push(newProj);
     }
     
