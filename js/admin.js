@@ -23,12 +23,12 @@ async function checkLogin() {
 }
 
 async function loadAdminData() {
-    const localData = localStorage.getItem('adele_portfolio_data_v15');
+    const localData = localStorage.getItem('adele_portfolio_data_v16');
     if (localData) {
         portfolioData = JSON.parse(localData);
         renderAdminList();
     } else {
-        fetch('projects.json?v=15')
+        fetch('projects.json?v=16')
             .then(res => res.json())
             .then(data => {
                 portfolioData = data;
@@ -163,7 +163,7 @@ function deleteProject(id) {
 }
 
 function saveDataLocally() {
-    localStorage.setItem('adele_portfolio_data_v15', JSON.stringify(portfolioData));
+    localStorage.setItem('adele_portfolio_data_v16', JSON.stringify(portfolioData));
 }
 
 // Export JSON
