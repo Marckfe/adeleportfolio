@@ -1,0 +1,166 @@
+{
+  "profile": {
+    "name": "Adele Taccone",
+    "title": "Designer della comunicazione",
+    "bio": "Ciao! Sono un designer della comunicazione. Da bambina comunicavo meglio con il disegno che con le parole. Oggi aiuto persone e brand a raccontare la loro storia attraverso il design. Amo ascoltare, creare, trasformare idee in progetti visivi. Il mio portfolio è il risultato di anni di passione, impegno e ricerca continua, con l'obiettivo di dare forma a sogni e visioni autentiche.",
+    "contacts": {
+      "email": "tacconeadele@gmail.com",
+      "phone": "+39 3294532021",
+      "location": "Avellino, AV"
+    },
+    "education": [
+      {
+        "year": "A.S. 2019/2020",
+        "title": "Laurea magistrale in Graphic design multimedia",
+        "school": "Accademia di Belle Arti di Napoli"
+      },
+      {
+        "year": "A.S. 2016/2017",
+        "title": "Laurea triennale in Graphic design",
+        "school": "Accademia di Belle Arti di Napoli"
+      },
+      {
+        "year": "A.S. 2010/2011",
+        "title": "Diploma di maturità in Grafica pubblicitaria e Fotografia",
+        "school": "Istituto Statale d'Arte 'Paolo Anania De Luca' - Avellino"
+      }
+    ],
+    "experience": [
+      {
+        "period": "Nov 2021 - oggi",
+        "company": "Clarence Corporation",
+        "role": "Grafiche per eventi online/offline, packaging prodotti, social contents"
+      },
+      {
+        "period": "Apr - Ott 2021",
+        "company": "BrandsBrockers",
+        "role": "Grafiche e postproduzione foto per marketplace"
+      },
+      {
+        "period": "Mar - Apr 2021",
+        "company": "Clouding",
+        "role": "Postproduzione foto e-commerce"
+      }
+    ],
+    "skills": [
+      "Logo e brand identity",
+      "Photo editing",
+      "Packaging",
+      "UI/UX design",
+      "Editorial design",
+      "3d modeling",
+      "2D/3D animation",
+      "Adobe: Photoshop, Illustrator, Indesign, After Effect, Premiere",
+      "Figma",
+      "Maya",
+      "Blender"
+    ]
+  },
+  "projects": [
+    {
+      "id": "1",
+      "title": "Dario Gargiulo (2024)",
+      "category": "Graphic Design",
+      "description": "Sviluppo della brand identity per il marchio di gioielli artigianali Dario Gargiulo Gioielli, con ideazione, gestione e cura dell'intera comunicazione del brand.",
+      "image": "assets/placeholder.jpg"
+    },
+    {
+      "id": "2",
+      "title": "BEWA (2024)",
+      "category": "Graphic Design",
+      "description": "Sviluppo della brand identity per il gestionale BEWA, con ideazione, gestione e cura dell'intera comunicazione del brand.",
+      "image": "assets/placeholder.jpg"
+    },
+    {
+      "id": "3",
+      "title": "Locandine Eventi (2023)",
+      "category": "Graphic Design",
+      "description": "Locandine realizzate per due eventi organizzati dall'azienda Clarence.",
+      "image": "assets/placeholder.jpg"
+    },
+    {
+      "id": "4",
+      "title": "Advertising Eventi (2023)",
+      "category": "Graphic Design",
+      "description": "Poster e brochure realizzati in occasione degli eventi 'è moda fashion Paestum' e 'Caserta bridal couture' (organizzati dall'azienda Clarence Corporation).",
+      "image": "assets/placeholder.jpg"
+    },
+    {
+      "id": "5",
+      "title": "Catalogo Marcel Morel (2022)",
+      "category": "Graphic Design",
+      "description": "Catalogo uomo facente parte della nuova collezione Marcel Morel, commissionato dall'azienda Clarence Corporation.",
+      "image": "assets/placeholder.jpg"
+    },
+    {
+      "id": "6",
+      "title": "Cataloghi PixelC3 & Talos (2021-2023)",
+      "category": "Graphic Design",
+      "description": "Catalogo prodotti realizzati per le aziende PixelC3 e Talos, per le quali curo l'immagine: cataloghi, packaging, poster negozi, social, roll-up, ecc.",
+      "image": "assets/placeholder.jpg"
+    },
+    {
+      "id": "7",
+      "title": "Advertising Gibi Nails (2021-2023)",
+      "category": "Graphic Design",
+      "description": "Catalogo prodotti e poster promozionale realizzati per l'azienda Gibi Nails.",
+      "image": "assets/placeholder.jpg"
+    },
+    {
+      "id": "8",
+      "title": "BEWA Restyling Website (2025)",
+      "category": "UI Design",
+      "description": "Analisi e miglioramento della UI e UX del sito web BEWA.",
+      "image": "assets/placeholder.jpg"
+    },
+    {
+      "id": "9",
+      "title": "ICOPY WEB SITE (2021)",
+      "category": "UI Design",
+      "description": "UI design per un sito di social selling. Realizzato per l'azienda Tryber.",
+      "image": "assets/placeholder.jpg"
+    },
+    {
+      "id": "10",
+      "title": "Lenez Sito Web (2021)",
+      "category": "UI Design",
+      "description": "Realizzazione di un sito vetrina per Lenez, azienda cliente di BrandsBrockers.",
+      "image": "assets/placeholder.jpg"
+    },
+    {
+      "id": "11",
+      "title": "Dieffe Store Amazon (2021)",
+      "category": "UI Design",
+      "description": "Realizzazione dello store Amazon Dieffe, per l'azienda BrandsBrockers.",
+      "image": "assets/placeholder.jpg"
+    },
+    {
+      "id": "12",
+      "title": "The Adventures of Nori (2020)",
+      "category": "UI Design",
+      "description": "Progettazione dell'UI per un'app di realtà aumentata, collegata ad un libro pop up interattivo.",
+      "image": "assets/placeholder.jpg"
+    },
+    {
+      "id": "13",
+      "title": "App Salute Cani (2019)",
+      "category": "UI Design",
+      "description": "Progettazione dell'UI per un'applicazione che monitori la salute del cane, collegata ad una pettorina smart.",
+      "image": "assets/placeholder.jpg"
+    },
+    {
+      "id": "14",
+      "title": "Bubu e la Notte (2018)",
+      "category": "Animazione 2D/3D",
+      "description": "Progettazione ed animazione di una breve storia per bambini in 2D.",
+      "image": "assets/placeholder.jpg"
+    },
+    {
+      "id": "15",
+      "title": "Il viaggio del pinguino (2019)",
+      "category": "Animazione 2D/3D",
+      "description": "Progettazione ed animazione di una breve storia, nell'ambito del corso di Animazione 3D.",
+      "image": "assets/placeholder.jpg"
+    }
+  ]
+}

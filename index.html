@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adele Taccone - Portfolio</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Caveat per i titoli "Brush Script" style e Montserrat per il corpo -->
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    
+    <!-- Header / Navigation -->
+    <header class="header">
+        <div class="container header-container">
+            <div class="logo">
+                <span class="logo-name">Adele Taccone</span>
+            </div>
+            <nav class="nav">
+                <ul>
+                    <li><a href="#about">Chi Sono</a></li>
+                    <li><a href="#portfolio">Portfolio</a></li>
+                    <li><a href="#skills">Competenze</a></li>
+                    <li><a href="#contact">Contatti</a></li>
+                </ul>
+            </nav>
+            <div class="mobile-menu-btn" id="mobileMenuBtn">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero pattern-bg" id="about">
+        <div class="container hero-content">
+            <div class="hero-text" id="bioContainer">
+                <h1 class="hero-title" id="profileName">Adele Taccone</h1>
+                <h2 class="hero-subtitle" id="profileTitle">Designer della comunicazione</h2>
+                <p class="hero-bio" id="profileBio">Caricamento bio...</p>
+                <div class="hero-actions">
+                    <a href="#portfolio" class="btn btn-primary">Vedi i Progetti</a>
+                    <a href="#contact" class="btn btn-outline">Contattami</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <!-- Vettoriale astratto o placeholder della foto di Adele -->
+                <div class="profile-illustration">
+                    <div class="illustration-circle"></div>
+                    <div class="illustration-avatar">A</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Esperienza ed Educazione -->
+    <section class="resume section-padding" id="resume">
+        <div class="container">
+            <div class="resume-grid">
+                <div class="resume-col">
+                    <h3 class="section-title brush-font">Educazione</h3>
+                    <ul class="timeline" id="educationList">
+                        <!-- Generato dinamicamente -->
+                    </ul>
+                </div>
+                <div class="resume-col">
+                    <h3 class="section-title brush-font">Esperienze lavorative</h3>
+                    <ul class="timeline" id="experienceList">
+                        <!-- Generato dinamicamente -->
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section class="portfolio pattern-bg section-padding" id="portfolio">
+        <div class="container">
+            <div class="portfolio-header">
+                <h2 class="section-title brush-font">Portfolio</h2>
+                
+                <div class="filters" id="portfolioFilters">
+                    <button class="filter-btn active" data-filter="all">Tutti</button>
+                    <button class="filter-btn" data-filter="Graphic Design">Graphic Design</button>
+                    <button class="filter-btn" data-filter="UI Design">UI Design</button>
+                    <button class="filter-btn" data-filter="Animazione 2D/3D">Animazione 2D/3D</button>
+                </div>
+            </div>
+
+            <div class="portfolio-grid" id="portfolioGrid">
+                <!-- I progetti vengono inseriti qui dal JS -->
+                <div class="loader">Caricamento progetti...</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="skills section-padding" id="skills">
+        <div class="container">
+            <h2 class="section-title brush-font">Competenze</h2>
+            <div class="skills-grid" id="skillsList">
+                <!-- Skills generate dal JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact pattern-bg section-padding" id="contact">
+        <div class="container contact-container">
+            <div class="contact-info">
+                <h2 class="section-title brush-font">Info & Contatti</h2>
+                <p>Hai un progetto in mente o vuoi semplicemente fare due chiacchiere? Scrivimi!</p>
+                <div class="contact-details" id="contactDetails">
+                    <!-- Contatti generati dal JS -->
+                </div>
+            </div>
+            <div class="contact-form-container">
+                <form class="contact-form" id="contactForm">
+                    <div class="form-group">
+                        <label for="name">Nome</label>
+                        <input type="text" id="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Messaggio</label>
+                        <textarea id="message" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Invia Messaggio</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; <span id="currentYear"></span> Adele Taccone. Portfolio creato con cura.</p>
+            <a href="admin.html" class="admin-link">Area Riservata</a>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/app.js"></script>
+</body>
+</html>
