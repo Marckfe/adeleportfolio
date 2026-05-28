@@ -734,3 +734,7 @@ body {
 .project-card::after { content: "Apri Progetto"; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(255,255,255,0.95); color: var(--primary-color); display: flex; justify-content: center; align-items: center; font-size: 2rem; font-weight: bold; font-family: "Caveat", cursive; opacity: 0; transition: opacity 0.3s ease; z-index: 10; }
 .project-card:hover::after { opacity: 1; }
 
+
+@media (max-width: 768px) { .project-card::after { display: none !important; } }
+@media (hover: none) { .project-card::after { display: none !important; } }
+
